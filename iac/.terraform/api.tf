@@ -1,9 +1,9 @@
-resource "docker_container" "api" {
-  name  = "api-${terraform.workspace}-01"
-  image = "lab/api"
+resource "docker_container" "backend" {
+  name  = "api01"
+  image = docker_image.api.image_id
 
-   ports {
-    internal = "3000"
-    external = var.api_port[terraform.workspace]
+  ports {
+    internal = 3000
+    external = 4002
   }
 }
