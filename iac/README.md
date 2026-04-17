@@ -5,8 +5,8 @@ Vamos a utilizar terraform.
 Lo primero es habilitar los proveedores, desde la carpeta donde se encuentra terraform
 ```
 cd iac
-- Se encuantra dentro de lab-iac-jueves
 ```
+Se encuantra dentro de Lab-iac-jueves
 
 ```
 terraform init
