@@ -1,9 +1,9 @@
-resource "docker_container" "web" {
-  name  = "web-${terraform.workspace}-01"
-  image = "lab/web"
+resource "docker_container" "frontend" {
+  name  = "web01"
+  image = docker_image.web.image_id
 
-   ports {
-    internal = "80"
-    external = var.web_port[terraform.workspace]
+  ports {
+    internal = 80
+    external = 4001
   }
 }

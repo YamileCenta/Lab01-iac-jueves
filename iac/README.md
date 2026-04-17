@@ -32,10 +32,24 @@ Se encuantra dentro de Lab-iac-jueves
 ```
 terraform init
 ```
+https://curly-barnacle-g4ppvvvqrgrrf9gpw-4001.app.github.dev/
+...
 
 Deben documentar como crear los ambientes y seleccionar los ambientes
+api.tf:
+```
+resource "docker_container" "backend" {
+  name  = "api01"
+  image = docker_image.api.image_id
 
-terraform.tfvars:
+  ports {
+    internal = 3000
+    external = 4002
+  }
+}
+```
+
+terraform.tfvars: Para api y para la web
 ```
 web_port={
     localhost = 4001
@@ -46,3 +60,5 @@ api_port={
     dev = 5002
 }
 ```
+
+Se agrega 
